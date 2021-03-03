@@ -5,7 +5,7 @@ import com.recruitment.beerRestApiTask.domain.Food;
 import com.recruitment.beerRestApiTask.repositories.BeerRepository;
 import com.recruitment.beerRestApiTask.repositories.FoodRepository;
 import com.recruitment.beerRestApiTask.util.ListToString;
-import com.recruitment.beerRestApiTask.util.ParseList;
+import com.recruitment.beerRestApiTask.util.ParseToList;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
@@ -188,7 +188,7 @@ public class DataSourceService {
                 new NotNull(), // first_brewed
                 new NotNull(new ParseInt()), // ibu
                 new NotNull(), // tagline
-                new ParseList()  //pairings
+                new ParseToList()  //pairings
         };
         return processors;
     }
