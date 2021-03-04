@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ParseList extends CellProcessorAdaptor {
+public class ParseToList extends CellProcessorAdaptor {
 
-    public ParseList() {
+    public ParseToList() {
         super();
     }
 
-    public ParseList(CellProcessor next) {
+    public ParseToList(CellProcessor next) {
         // this constructor allows other processors to be chained after ParseDay
         super(next);
     }
