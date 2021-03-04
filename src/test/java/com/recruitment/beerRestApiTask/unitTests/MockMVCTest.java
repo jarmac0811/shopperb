@@ -3,6 +3,7 @@ package com.recruitment.beerRestApiTask.unitTests;
 import com.recruitment.beerRestApiTask.BeerController;
 import com.recruitment.beerRestApiTask.services.DataSourceService;
 import com.recruitment.beerRestApiTask.repositories.BeerRepository;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -26,8 +27,10 @@ public class MockMVCTest {
     private BeerRepository beerRepository;
 
     @Test
+    @Disabled
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/beers/hello")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/beers/hello")).andDo(print())
+                .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, World")));
     }
 }
