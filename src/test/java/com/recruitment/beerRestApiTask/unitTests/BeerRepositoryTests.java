@@ -45,17 +45,4 @@ class BeerRepositoryTests {
         Assertions.assertEquals(beer,beersByFood.get(0));
     }
 
-    @Test
-    void findByPhones() {
-        Beer beer = beerRepository.save(new Beer(10, "buzz", "tagline", "04/2013", "Our take on the classic", null, 25,
-                null));
-        beer.setPhones(Arrays.asList("Nokia, Samsung, Xiaomi"));
-        System.out.println("beerRepository.findByName(\"buzz\") = " + beerRepository.findByName("buzz"));
-
-        List<Beer> beersByPhones = beerRepository.findByPhonesLike("%Nokia%");
-        System.out.println("beersByPhones = " + beersByPhones);
-        Assertions.assertEquals(beer,beersByPhones.get(0));
-
-    }
-
 }

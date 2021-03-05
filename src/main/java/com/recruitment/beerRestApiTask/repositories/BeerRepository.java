@@ -18,5 +18,4 @@ public interface BeerRepository extends JpaRepository<Beer, Long> {
     @Query("SELECT b FROM Beer b join fetch Food f on b.id = f.beer WHERE f.name = ?1")
     List<Beer> findByFoodPairing(String foodPairing);
 
-    List<Beer> findByPhonesLike(String phone);
 }

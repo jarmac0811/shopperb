@@ -38,10 +38,6 @@ public class Beer implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "beer", cascade = {CascadeType.ALL},orphanRemoval = true)
     private List<Food> foodPairing = new ArrayList<Food>();
 
-    @ElementCollection
-    @OrderColumn(name = "order_id")
-    private List<String> phones = new ArrayList<>();
-
     @JsonCreator
     public Beer(@JsonProperty("id") int externalId, @JsonProperty("name") String name, @JsonProperty("tagline") String tagline, @JsonProperty("first_brewed") String firstBrewed,
                 @JsonProperty("description") String description, @JsonProperty("image_url") String imageUrl, @JsonProperty("ibu") int ibu, @JsonProperty("food_pairing") List<Food> foodPairing) {
