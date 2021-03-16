@@ -1,6 +1,6 @@
 package com.recruitment.beerRestApiTask.unitTests;
 
-import com.recruitment.beerRestApiTask.BeerController;
+import com.recruitment.beerRestApiTask.controllers.BeerController;
 import com.recruitment.beerRestApiTask.services.DataSourceService;
 import com.recruitment.beerRestApiTask.repositories.BeerRepository;
 import org.junit.jupiter.api.Disabled;

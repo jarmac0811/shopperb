@@ -1,4 +1,4 @@
-package com.recruitment.beerRestApiTask;
+package com.recruitment.beerRestApiTask.controllers;
 
 import com.recruitment.beerRestApiTask.domain.Beer;
 import com.recruitment.beerRestApiTask.services.DataSourceService;
