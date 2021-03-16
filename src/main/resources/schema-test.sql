@@ -1,5 +1,6 @@
 CREATE TABLE BEER (
-       internal_id IDENTITY NOT NULL PRIMARY,
+--       internal_id IDENTITY NOT NULL PRIMARY,
+        internal_id PRIMARY KEY AUTO_INCREMENT,
         description text varchar(255),
         external_id bigint,
         first_brewed varchar(255),
