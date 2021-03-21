@@ -9,6 +9,8 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })//(exclude = HibernateJpaAutoConfiguration.class)
 //@EnableScheduling
+//@EnableOAuth2Sso
+
 public class
 RestApiTaskApplication {
     public static void main(String[] args) {
