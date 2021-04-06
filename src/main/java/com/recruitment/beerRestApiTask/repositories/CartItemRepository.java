@@ -1,9 +1,9 @@
 package com.recruitment.beerRestApiTask.repositories;
 
-import com.recruitment.beerRestApiTask.domain.Message;
+import com.recruitment.beerRestApiTask.domain.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MessageRepository extends JpaRepository<Message, Long> {
+public interface CartItemRepository extends JpaRepository<CartItem, Long> {
 }

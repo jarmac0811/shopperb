@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests().antMatchers( "/oauth/**", "/users/**", "/categories/**",
-                "/products/**", "/products","/h2-console/**").permitAll()
+                "/products/**","/orders/**","/shoppingCarts/**","/h2-console/**").permitAll()
                 .anyRequest().authenticated();
         http.headers().frameOptions().disable();
 //                .loginPage("/oauth_login");
