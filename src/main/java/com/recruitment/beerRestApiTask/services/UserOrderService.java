@@ -4,6 +4,8 @@ import com.recruitment.beerRestApiTask.domain.OrderItem;
 import com.recruitment.beerRestApiTask.domain.UserOrder;
 import com.recruitment.beerRestApiTask.repositories.UserOrderRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +42,10 @@ public class UserOrderService {
     public Optional<UserOrder> getOrder(String id) {
         Optional<UserOrder> order = userOrderRepository.findById(Long.valueOf(id));
         return order;
+    }
+    public List<UserOrder> getOrderByUserId(String id) {
+        List<UserOrder> orders = userOrderRepository.findByUserId(id);
+        return orders;
     }
 
 }

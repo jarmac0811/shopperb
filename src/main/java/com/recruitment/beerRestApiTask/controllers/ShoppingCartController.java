@@ -10,8 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/shoppingCarts")
-//@CrossOrigin(origins = {"http://localhost:4200"},
-//        allowedHeaders = {"Access-Control-Allow-Origin", "Content-Type"})
+//@CrossOrigin(origins = {"http://localhost:4200"})
 public class ShoppingCartController {
     private ShoppingCartService shoppingCartService;
 
@@ -38,7 +37,7 @@ public class ShoppingCartController {
         if (shoppingCart.isPresent()) {
             return ResponseEntity.ok(shoppingCart.get());
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(this.shoppingCartService.getNewShoppingCart());
     }
 
     //    @PutMapping("/{id}")

@@ -3,15 +3,15 @@ package com.recruitment.beerRestApiTask.controllers;
 import com.recruitment.beerRestApiTask.domain.UserOrder;
 import com.recruitment.beerRestApiTask.services.UserOrderService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/orders")
-//@CrossOrigin(origins = {"http://localhost:4200"},
-//        allowedHeaders = {"Access-Control-Allow-Origin", "Content-Type"})
+//@CrossOrigin(origins = {"http://localhost:4200"})
 public class UserOrderController {
     private UserOrderService userOrderService;
 
@@ -24,7 +24,13 @@ public class UserOrderController {
     public ResponseEntity<List<UserOrder>> getAllOrders() {
         return ResponseEntity.ok(this.userOrderService.getAllOrders());
     }
-
+    @PostMapping("/validate")
+    public boolean validateOrder(@RequestBody UserOrder userOrder, BindingResult result, Model model) {
+        if(result.hasErrors()){
+            return false;
+        }
+        return true;
+    }
     @GetMapping("/new")
     @ResponseBody
     public ResponseEntity<UserOrder> getNewOrder() {
@@ -33,10 +39,10 @@ public class UserOrderController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<UserOrder> getOrderById(@PathVariable String id) {
-        Optional<UserOrder> order = this.userOrderService.getOrder(id);
-        if (order.isPresent()) {
-            return ResponseEntity.ok(order.get());
+    public ResponseEntity<List<UserOrder>> getOrderByUserId(@PathVariable String id) {
+        List<UserOrder> orders = this.userOrderService.getOrderByUserId(id);
+        if (orders.size()>0) {
+            return ResponseEntity.ok(orders);
         }
         return ResponseEntity.notFound().build();
     }

@@ -8,17 +8,18 @@ insert into category (category_Id, category_Name) values ('fruits', 'Fruits');
 insert into category (category_Id, category_Name) values ('seasonings', 'Seasonings and Spices');
 insert into category (category_Id, category_Name) values ('vegetables', 'Vegetables');
 
-insert into user (user_Id, admin, email, name) values ('104308707124955157902', 'true', 'jarmac0811@gmail.com', 'Jarosław Maciejczak');
+insert into user (user_Id, external_User_Id, admin, email, user_Name, roles,password) values (112121221212, '104308707124955157902', 'true', 'jarmac0811@gmail.com', 'Jarosław Maciejczak','ADMIN','$2y$12$CQPbTehPHRwIjuR64UdGJO.YvCwUg5IJt9yE1dRnXAxbvGmvTCUq.');
+insert into user (user_Id, external_User_Id, admin, email, user_Name, roles,password) values (223232323233, '2', 'false', 'user123@gmail.com', 'user123','USER','$2y$12$TXXxjlQ4mkJN2XvkduvCBeDa0pFk4TqpdczODJuQkvkKoMfGd0SfK');
 
 
 insert into product (id, category, price, image_url, title)
-values (1,'vegetables',2.5,'http://www.publicdomainpictures.net/pictures/170000/velka/spinach-leaves-1461774375kTU.jpg','Spinach');
+values (1,'vegetables',2,'http://www.publicdomainpictures.net/pictures/170000/velka/spinach-leaves-1461774375kTU.jpg','Spinach');
 insert into product (id, category, price, image_url, title)
 values (2,'bread',3,'https://static.pexels.com/photos/2434/bread-food-healthy-breakfast.jpg','Freshly Baked Bread');
 insert into product (id, category, price, image_url, title)
-values (3,'fruits',1.75,'https://pixnio.com/free-images/2017/03/17/2017-03-17-09-15-56.jpg','Avocado');
+values (3,'fruits',1,'https://pixnio.com/free-images/2017/03/17/2017-03-17-09-15-56.jpg','Avocado');
 insert into product (id, category, price, image_url, title)
-values (4,'vegetables',2.5,'https://static.pexels.com/photos/8390/food-wood-tomatoes.jpg','Tomato');
+values (4,'vegetables',2,'https://static.pexels.com/photos/8390/food-wood-tomatoes.jpg','Tomato');
 /*
 insert into product (id, category, price, image_url, title)
 values (5,'vegetables',1,'https://upload.wikimedia.org/wikipedia/commons/7/7f/Lettuce_Mini_Heads_%287331119710%29.jpg','Lettuce');

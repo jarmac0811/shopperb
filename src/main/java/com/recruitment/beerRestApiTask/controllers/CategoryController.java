@@ -9,8 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
-/*@CrossOrigin(origins = {"http://localhost:4200"},
-        allowedHeaders = {"Access-Control-Allow-Origin", "Content-Type"})*/
+//@CrossOrigin(origins = {"http://localhost:4200"})
 public class CategoryController {
     private CategoryService categoryService;
 

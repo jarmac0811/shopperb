@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,10 +17,14 @@ public class UserOrder {
     @Id
     @GeneratedValue
     private Long id;
+    @NotNull
     private String userId;
     private String datePlaced;
     @Embedded
+    @NotNull
     private Shipping shipping;
+    @NotNull
+    @Min(2)
     private String totalPrice;
     /*    @ElementCollection
         @CollectionTable(name = "cart_item_mapping",

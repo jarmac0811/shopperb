@@ -10,16 +10,22 @@ import org.mapstruct.Mappings;
 public interface UserMapper {
     @Mappings({
             @Mapping(source = "userId", target = "userId"),
-            @Mapping(source = "name", target = "name"),
+            @Mapping(source = "externalUserId", target = "externalUserId"),
+            @Mapping(source = "userName", target = "userName"),
             @Mapping(source = "email", target = "email"),
+            @Mapping(source = "roles", target = "roles"),
+            @Mapping(source = "permissions", target = "permissions"),
             @Mapping(source = "admin", target = "admin"),
     })
     UserDTO map(User entity);
 
     @Mappings({
             @Mapping(source = "userId", target = "userId"),
-            @Mapping(source = "name", target = "name"),
+            @Mapping(source = "externalUserId", target = "externalUserId"),
+            @Mapping(source = "userName", target = "userName"),
             @Mapping(source = "email", target = "email"),
+            @Mapping(source = "roles", target = "roles"),
+            @Mapping(source = "permissions", target = "permissions"),
             @Mapping(source = "admin", target = "admin"),
     })
     User map(UserDTO dto);
