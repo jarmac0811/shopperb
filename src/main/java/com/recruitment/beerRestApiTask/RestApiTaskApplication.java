@@ -39,7 +39,7 @@ public class RestApiTaskApplication {
         return new RestTemplate();
     }
 
-    @Bean
+//    @Bean
     public ServletWebServerFactory servletContainer() {
         // Enable SSL Trafic
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
