@@ -15,12 +15,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication(/*exclude = {SecurityAutoConfiguration.class}*/)//(exclude = HibernateJpaAutoConfiguration.class)
 //@EnableScheduling
+//@EnableWebMvc
 public class RestApiTaskApplication {
     @Value("${stripe.api.key}")
     String apiKey;

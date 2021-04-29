@@ -56,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 //        this.objectMapper = new ObjectMapper();
     }
 
+
     @Bean
     public Docket apiDocket() {
         String groupName = "Swagger";
@@ -90,6 +91,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
                 .addFilter(new JvtAuthorizationFilter(authenticationManagerBean(), this.userRepository))
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/**").permitAll() //disabling authentication
                 .antMatchers("/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
                 .antMatchers("/categories/**").permitAll()
                 .antMatchers("/products/**").permitAll()
